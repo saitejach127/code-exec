@@ -20,7 +20,7 @@ function onConnected(connection){
 			if(err) throw err;
 		});
 
-		exec("g++ out.cpp && ./a.out", (err,stdout,stderr) => {
+		exec("g++ out.cpp && ./a.out && rm a.out", (err,stdout,stderr) => {
 			connection.write(stdout);
 		})
 
